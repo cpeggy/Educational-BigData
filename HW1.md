@@ -1,4 +1,4 @@
-# 作業一 教育相關的圖片分析
+# 作業一 針對自己有興趣的Azure進行探索介紹
 ------
 ```
 因為我們的資料有純文字、圖片、影片、語音等等
@@ -7,14 +7,13 @@
 ```
 ------
 ### 用已經拿到的學生A的紀錄中的圖像跑跑看
-![實例1](https://github.com/cpeggy/LAT/blob/main/Hw5/allcolor_web-1.jpg)
+![實例1]([https://github.com/cpeggy/LAT/blob/main/Hw5/allcolor_web-1.jpg](https://github.com/cpeggy/Educational-BigData/blob/main/%E6%88%AA%E5%9C%96%202023-10-03%2023.54.56.png))
 ```
-*旁邊的回應都有呈現圖上的顏色和主要物件
+實例一：以電腦字體（非手寫字體）的辨識還不錯
 ```
-![實例2](https://github.com/cpeggy/LAT/blob/main/Hw5/allcolor_web-2.jpg)
+![實例2]([https://github.com/cpeggy/LAT/blob/main/Hw5/allcolor_web-2.jpg](https://github.com/cpeggy/Educational-BigData/blob/main/%E6%88%AA%E5%9C%96%202023-10-03%2023.55.32.png)https://github.com/cpeggy/Educational-BigData/blob/main/%E6%88%AA%E5%9C%96%202023-10-03%2023.55.32.png)
 ```
-*旁邊的回應都有呈現圖上的顏色和主要物件
+實例二：以手寫字的辨識大致可以辨識但需要人工修正
 ```
 ### 如何應用在專題？
->可以利用鏡頭及時辨識影像
->介面可以更活潑
+>所有的圖像資料轉文字用
