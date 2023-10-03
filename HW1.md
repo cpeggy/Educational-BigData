@@ -7,11 +7,11 @@
 ```
 ------
 ### 用已經拿到的學生A的紀錄中的圖像跑跑看
-![實例1]([https://github.com/cpeggy/LAT/blob/main/Hw5/allcolor_web-1.jpg](https://github.com/cpeggy/Educational-BigData/blob/main/%E6%88%AA%E5%9C%96%202023-10-03%2023.54.56.png))
+![實例1](https://github.com/cpeggy/Educational-BigData/blob/main/%E6%88%AA%E5%9C%96%202023-10-03%2023.54.56.png)
 ```
 實例一：以電腦字體（非手寫字體）的辨識還不錯
 ```
-![實例2]([https://github.com/cpeggy/LAT/blob/main/Hw5/allcolor_web-2.jpg](https://github.com/cpeggy/Educational-BigData/blob/main/%E6%88%AA%E5%9C%96%202023-10-03%2023.55.32.png)https://github.com/cpeggy/Educational-BigData/blob/main/%E6%88%AA%E5%9C%96%202023-10-03%2023.55.32.png)
+![實例2](https://github.com/cpeggy/Educational-BigData/blob/main/%E6%88%AA%E5%9C%96%202023-10-03%2023.55.32.png)
 ```
 實例二：以手寫字的辨識大致可以辨識但需要人工修正
 ```
