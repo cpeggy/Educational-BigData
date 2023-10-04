@@ -23,5 +23,5 @@
 
 ### 相關文件
 #### [Azure docunment](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/concept-ocr)
-#### [Azure language support](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/quickstarts-sdk/image-analysis-client-library-40?tabs=visual-studio%2Clinux&pivots=programming-language-python)
+#### [Azure language support](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/language-support)
 #### [入門文件](https://learn.microsoft.com/zh-tw/azure/ai-services/computer-vision/quickstarts-sdk/image-analysis-client-library-40?tabs=visual-studio%2Clinux&pivots=programming-language-csharp)
