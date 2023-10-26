@@ -6,6 +6,9 @@
 所以在這裡我會介紹Azure Cognitive Services for Vision（Azure認知服務裡的影像部分）中的Extract text from images（從圖中辨識文字）
 ```
 ------
+### no code 試用
+#### [服務試用](https://portal.vision.cognitive.azure.com/demo/extract-text-from-images)
+------
 ### 用自己的圖像跑跑看
 
 ```
@@ -23,4 +26,5 @@
 
 ### 相關文件
 #### [Azure docunment](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/concept-ocr)
-#### [Azure language support](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/quickstarts-sdk/image-analysis-client-library-40?tabs=visual-studio%2Clinux&pivots=programming-language-python)
+#### [Azure language support](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/language-support)
+#### [入門文件](https://learn.microsoft.com/zh-tw/azure/ai-services/computer-vision/quickstarts-sdk/image-analysis-client-library-40?tabs=visual-studio%2Clinux&pivots=programming-language-csharp)
