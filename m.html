@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Azure Text Analysis Runtime Service</title>
+</head>
+<body>
+    <h1>Azure Text Analysis Runtime Service</h1>
+    <textarea id="textToAnalyze" rows="4" cols="50"></textarea>
+    <br>
+    <button type="button" onclick="analyzeText()">Analyze Text</button>
+    <br>
+    <h2>Analysis Result:</h2>
+    <p id="analysisResult"></p>
+    <script>
+        function analyzeText() {
+            var textToAnalyze = document.getElementById("textToAnalyze").value;
+            var apiUrl = "https://nerrrrr.cognitiveservices.azure.com/language/analyze-text/jobs?api-version=2022-10-01-preview"; //https://nerrrrr.cognitiveservices.azure.com/language/analyze-text/jobs?api-version=2022-10-01-preview
+            var apiKey = "";  // 请替换为实际的 Azure API 密钥
+
+            // 构建请求数据
+            var requestData = {
+                
+                tasks: [{
+                    kind: "CustomEntityRecognition",
+                    parameters: {
+                        projectName: "nerr202310231",
+                        deploymentName: "nerlearningmethodDeployment_version1",
+                        stringIndexType: "TextElement_v8"
+                    }
+                }],
+                displayName: "CustomTextPortal_CustomEntityRecognition",
+                analysisInput: {
+                    documents: [{
+                        id: "document_CustomEntityRecognition",
+                        text: textToAnalyze,
+                        language: "zh-hans"// 请替换为文档的实际语言 
+                    }]
+                }
+            };
+
+            fetch(apiUrl, {
+                method: "POST",
+                headers: {
+                    "Ocp-Apim-Subscription-Key": apiKey,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    
+                        "displayName": "Extracting entities",
+                        "analysisInput": {
+                            "documents": [
+                                {
+                                    "id": "1",
+                                    "language": "zh-hans",
+                                    "text": textToAnalyze
+                                }
+                            ]
+                        },
+                        "tasks": [
+                            {
+                                "kind": "CustomEntityRecognition",
+                                "taskName": "Entity Recognition",
+                                "parameters": {
+                                    "projectName": "nerr202310231",
+                                    "deploymentName": "nerlearningmethodDeployment_version1"
+                                }
+                            }
+                        ]
+                    
+                    
+                })
+                
+            })
+            .then(function(response) {
+                // 检查响应是否成功
+                if (response.ok) {
+                    console.log(response)
+                    return response.json(); // 将响应解析为 JSON
+                } else {
+                    throw new Error('API 请求失败'); // 如果响应不成功，抛出错误
+                }
+            })
+            .then(function(data) {
+                // 在这里访问 JSON 数据
+                console.log("Analysis Result:", data);
+                // 如果您的 JSON 响应包含多个字段，您可以根据字段名称访问数据，例如 data.fieldName
+            })
+            .catch(function(error) {
+                console.error("Error:", error);
+            });            
+        }   
+    </script>
+
+</body>
+</html>
+
+.then(data => {
+    console.log("Analysis Result:", data);
+
+    // 获取用于显示结果的<p>元素
+    var resultElement = document.getElementById("analysisResult");
+
+    // 将结果文本插入到<p>元素中
+    resultElement.innerHTML = "Analysis Result: " + data;
+})
+
+.catch(error => {
+    console.error("Error:", error);
+})
