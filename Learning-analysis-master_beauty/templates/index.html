@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Eventually by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<h1>Learning Analysis</h1>
+				<p>A simple template for telling you what subject category you may interest the most and the reference of your learning method.</a></p>
+			</header>
+
+		<!-- Upload Form -->
+		<form id="uploadForm" enctype="multipart/form-data">
+			<input type="file" id="fileInput" name="file">
+			<button type="button" onclick="uploadFile()">上傳檔案並進行分析</button>
+			<button type="button" onclick="generateCharts()">生成分析圖表</button>
+			<button type="button" onclick="displayResults()">顯示學習歷程分析</button>
+			<button type="button" onclick="displayResultsAndRecommendation()">分析與建議</button>
+		</form>
+
+			<div id="displayResults" class="resizable-dialog"></div>
+    <div id="recommendationResults" class="resizable-dialog"></div>
+
+    <div id="sentimentChart">
+		<!-- 图表1 -->
+		{% if url_for('static', folder='stastic', filename='graph1.png') %}
+			<img id="graph1" src="{{ url_for('static', filename='static/graph1.png') }}" alt="Graph 1">
+		{% endif %}
+		<!-- 图表2 -->
+		{% if url_for('static', folder='stastic', filename='graph2.png') %}
+			<img id="graph2" src="{{ url_for('static', filename='static/graph2.png') }}" alt="Graph 2">
+		{% endif %}
+		<!-- 图表3 -->
+		{% if url_for('static', folder='stastic', filename='graph3.png') %}
+			<img id="graph3" src="{{ url_for('static', filename='static/graph3.png') }}" alt="Graph 3">
+		{% endif %}
+		<!-- 图表4 -->
+		{% if url_for('static', folder='stastic', filename='graph4.png') %}
+			<img id="graph4" src="{{ url_for('static', filename='static/graph4.png') }}" alt="Graph 4">
+		{% endif %}
+	</div>	
+	
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            checkForMissingImages();
+        });
+
+        function uploadFile() {
+            var input = document.getElementById('fileInput');
+            var file = input.files[0];
+
+            var formData = new FormData();
+            formData.append('file', file);
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                window.result = data.result;
+                console.log(window.result);
+                if (data.success) {
+                    updateCharts();
+                    checkForMissingImages();
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        function generateCharts() {
+            fetch('/check_for_new_images', { method: 'GET' })
+                .then(response => response.json())
+                .then(data => {
+                    // data 中包含新的圖片信息，如果有的話
+                    if (data.new_images) {
+                        // 更新頁面上的圖片
+                        updateImages(data.new_images);
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function checkForMissingImages() {
+            // Check if images are missing and hide them
+            checkAndHideImage('graph1');
+            checkAndHideImage('graph2');
+            checkAndHideImage('graph3');
+            checkAndHideImage('graph4');
+
+            // If all images are loaded, stop checking for new images
+            if (areAllImagesLoaded()) {
+                clearInterval(checkForNewImagesInterval);
+            }
+        }
+
+        function checkAndHideImage(imageId) {
+            var imageElement = document.getElementById(imageId);
+            if (imageElement && (!imageElement.complete || typeof imageElement.naturalWidth === "undefined" || imageElement.naturalWidth === 0)) {
+                imageElement.style.display = 'none';
+            }
+        }
+
+        function areAllImagesLoaded() {
+            var graph1 = document.getElementById('graph1');
+            var graph2 = document.getElementById('graph2');
+            var graph3 = document.getElementById('graph3');
+            var graph4 = document.getElementById('graph4');
+
+            return graph1.complete && graph2.complete && graph3.complete && graph4.complete;
+        }
+
+        function updateImages(newImages) {
+            var sentimentChartDiv = document.getElementById('sentimentChart');
+            sentimentChartDiv.innerHTML = '';
+
+            newImages.forEach(function(image) {
+                var imgPath = "/static/" + image;
+                fetch(imgPath)
+                    .then(response => {
+                        if (response.ok) {
+                            var imgElement = document.createElement('img');
+                            imgElement.src = imgPath;
+                            imgElement.alt = "Graph";
+                            sentimentChartDiv.appendChild(imgElement);
+                        }
+                    })
+                    .catch(error => console.error('Error checking image:', error));
+            });
+
+            // If all images are loaded, stop checking for new images
+            if (areAllImagesLoaded()) {
+                clearInterval(checkForNewImagesInterval);
+            }
+        }
+
+        function getRecommendation() {
+            var jsondata = JSON.stringify(window.result);
+
+            fetch('/recommendation', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: jsondata,
+            })
+            .then(response => response.json())
+            .then(result => {
+                var recommendation = result.recommendation;
+                var recommendationDiv = document.getElementById('recommendationResults');
+                recommendationDiv.innerHTML = `<p><strong>Recommendation:</strong> ${recommendation}</p>`;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        function updateCharts() {
+            // Remove the call to checkForNewImages
+        }
+
+        function displayResults3(results) {
+            var resultsDiv = document.getElementById('sentimentResults');
+            resultsDiv.innerHTML = '';
+
+            results.forEach(function(item) {
+                var resultItem = document.createElement('div');
+                resultItem.innerHTML = `
+                    <p><strong>Course:</strong> ${item.course}</p>
+                    <p><strong>Field:</strong> ${item.field}</p>
+                    <p><strong>Learning Method:</strong> ${item.learning_method}</p>
+                    <p><strong>Review:</strong> ${item.review}</p>
+                    <p><strong>Score:</strong> ${item.score}</p>
+                    <p><strong>Sentiment:</strong> ${item.sentiment}</p>
+                    <hr>
+                `;
+                resultsDiv.appendChild(resultItem);
+            });
+        }
+
+        function displayResults2(results) {
+            var resultsDiv = document.getElementById('displayResults');
+            resultsDiv.innerHTML = '';
+
+            results.forEach(function(item) {
+                var resultItem = document.createElement('div');
+                resultItem.innerHTML = `
+                    <p><strong>Course:</strong> ${item.course}</p>
+                    <p><strong>Field:</strong> ${item.field}</p>
+                    <p><strong>Learning Method:</strong> ${item.learning_method}</p>
+                    <p><strong>Review:</strong> ${item.review}</p>
+                    <p><strong>Score:</strong> ${item.score}</p>
+                    <p><strong>Sentiment:</strong> ${item.sentiment}</p>
+                    <hr>
+                `;
+                resultsDiv.appendChild(resultItem);
+            });
+        }
+
+        function displayResults() {
+            displayResults2(window.result);
+        }
+
+        function displayResultsAndRecommendation() {
+            getRecommendation();
+        }
+		<!-- Scripts -->
+		<script src="{{ url_for('static', filename='assests/js/main.js') }}">
+			
+		</script>
+	</body>
+</html>

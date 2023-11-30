@@ -1,0 +1,162 @@
+[
+    {
+        "course": "Story Writing",
+        "score": 70,
+        "review": "It’s when I practice creative writing, whether it’s stories, scripts, or just piecing together my ideas into a storyline.",
+        "sentiment": "neutral",
+        "learning_method": "practice",
+        "field": "語文"
+    },
+    {
+        "course": "Coding",
+        "score": 77,
+        "review": "I learned programming so I can know how it works as well as be a solo game designer.",
+        "sentiment": "neutral",
+        "learning_method": "N/A",
+        "field": "數理"
+    },
+    {
+        "course": "Character Design",
+        "score": 95,
+        "review": "I like character creation. It’s partially connected to Creative Writing, and partially Digital and Traditional Art. It is creating the appearance or characters, as well as their profiles and identities. However, it happened that all the stories I put didn’t use the characters put here",
+        "sentiment": "mixed",
+        "learning_method": "N/A",
+        "field": "藝術"
+    },
+    {
+        "course": "Digital Art",
+        "score": 80,
+        "review": "Digital art is drawing on a tablet that’s virtually connected to the screen. It’s like drawing traditional, but you have easier and more range of colors, and your drawing surface is dissociated from where it appears. While knowing how to draw digitally is easier and useful, I often draw in traditional because it feels more natural to me.",
+        "sentiment": "positive",
+        "learning_method": "draw",
+        "field": "藝術"
+    },
+    {
+        "course": "English",
+        "score": 95,
+        "review": "It’s my first language, but I included it here because I had taken a few English related tests, and I needed to study for them.",
+        "sentiment": "neutral",
+        "learning_method": "study",
+        "field": "語文"
+    },
+    {
+        "course": "Traditional Art",
+        "score": 79,
+        "review": "Traditional art is what is sounds like; the usual drawing on paper, although it’s not limited to just pencil sketches and paintings.",
+        "sentiment": "neutral",
+        "learning_method": "drawing",
+        "field": "藝術"
+    },
+    {
+        "course": "學習歷程設計",
+        "score": 88,
+        "review": "This class was alright. We learned how to write in a sort of resume format, so we could prepare for the future. It’s a nice skill to have in any situation, whether it’s related to jobs or for scholarships. Although it was a bit boring, I feel like it is necessary and it’s a good thing to learn.",
+        "sentiment": "positive",
+        "learning_method": "resume format",
+        "field": "語文"
+    },
+    {
+        "course": "社會文化",
+        "score": 85,
+        "review": "Personally, I think the class is pretty interesting. However, it wasn’t a topic I’m interested in, so I wouldn’t put in as much effort as I would like to. But I wouldn’t say I was lazy with my work.",
+        "sentiment": "mixed",
+        "learning_method": "N/A",
+        "field": "社會"
+    },
+    {
+        "course": "哲學讀書會 ",
+        "score": 85,
+        "review": "I struggled with paying attention to reading in Chinese, and I had to force myself to reread the same chapters over and over again to get it into my head.",
+        "sentiment": "negative",
+        "learning_method": "N/A",
+        "field": "社會"
+    },
+    {
+        "course": "閱讀與寫作",
+        "score": 80,
+        "review": "I personally dislike this class, but it’s on the pure basis that I struggled with understanding the poems. I struggled a lot during this class due to my lack of understanding of Chinese poems, and had to rely on translations and Google Translate to comprehend them. But I don’t think(?) the class is bad, but it’s not great either. It’s pretty mundane, in my opinion.",
+        "sentiment": "negative",
+        "learning_method": "Google Translate",
+        "field": "語文"
+    },
+    {
+        "course": "Podcast專案 ",
+        "score": 85,
+        "review": "I like this class. We get to learn how podcasts are made, and get to make one ourselves! It was a pretty fun experience in my opinion. I would probably choose a more active role next time (although everyone got involved in the recording in the end product), and I hope we could get more chances or longer recording times.",
+        "sentiment": "positive",
+        "learning_method": "N/A",
+        "field": "藝術"
+    },
+    {
+        "course": "應用數學  ",
+        "score": 85,
+        "review": "In this class, I was in the group involved in the environment, and on the topic on safe crab crossing. I had helped do some research and drew the profile picture for our project. But it wasn’t the most interesting class as the topic wasn’t one I was the most interested in, so I couldn’t be as invested as I wanted to. Still, it was an experience.",
+        "sentiment": "negative",
+        "learning_method": "N/A",
+        "field": "數理"
+    },
+    {
+        "course": "心理學講座 ",
+        "score": 88,
+        "review": "Psychology is a class I actually like a lot, due to me wanting to use it to make deep, authentic characters as well as understanding myself and people around me. It has helped me understand myself better, and realize things that I didn’t before. I hope we could cover more topics or keep this class in the future.",
+        "sentiment": "positive",
+        "learning_method": "N/A",
+        "field": "社會"
+    },
+    {
+        "course": "哲學 ",
+        "score": 75,
+        "review": "I really like this class. Philosophy is such an interesting subject, and I have some new ideals and approach to life. I hope we can learn from this class more often and take on more interesting subjects",
+        "sentiment": "positive",
+        "learning_method": "N/A",
+        "field": "社會"
+    },
+    {
+        "course": "工作思維 ",
+        "score": 65,
+        "review": "We learned how to create, execute and finish a plan.",
+        "sentiment": "neutral",
+        "learning_method": "create",
+        "field": "語文"
+    },
+    {
+        "course": "專題引導 ",
+        "score": 79,
+        "review": "In this class, I focus on my own goals, character creation, doing things thoroughly, researching more than I need. I want to do things right. If my characters has a mental illness, I would research about the symptoms, causes and effects. If I want to make a historical character, I research on that time period. I put a lot of effort in what I do, continuing after school.",
+        "sentiment": "neutral",
+        "learning_method": "researching",
+        "field": "社會"
+    },
+    {
+        "course": "科技與創新 ",
+        "score": 49,
+        "review": "The video about iPhones was interesting.",
+        "sentiment": "positive",
+        "learning_method": "video",
+        "field": "數理"
+    },
+    {
+        "course": "學科引導｜國文",
+        "score": 69,
+        "review": "When we went to National Palace Museum, it was very nostalgic for me, as I used to go there all the time whenever I went to Taipei. However, I never explored outside the children’s section, and there were a lot of interesting things to see.",
+        "sentiment": "positive",
+        "learning_method": "explored",
+        "field": "社會"
+    },
+    {
+        "course": "學科引導｜英文",
+        "score": 74,
+        "review": "Despite knowing how to speak English and how to construct sentences, I don’t know much about verbs or nouns. I just know what it’s supposed to sound like. So it was helpful to me.",
+        "sentiment": "positive",
+        "learning_method": "N/A",
+        "field": "社會"
+    },
+    {
+        "course": " 學科引導｜自然科學 ",
+        "score": 69,
+        "review": "This class didn’t have much of an impression to me. We learned about how to calculate gravity, how we see color, and other interesting things to know, but I wasn’t really interested in. ",
+        "sentiment": "negative",
+        "learning_method": "N/A",
+        "field": "數理"
+    }
+]
